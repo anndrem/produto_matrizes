@@ -38,7 +38,7 @@ def main():
             while len(item) < len(b):
                 # novo ponteiro para alterar as colunas da matriz B
                 element.append(a[i][j]*b[k][l])
-                if j == 1:
+                if j == len(b[0]) - 1:
                     item.append(sum(element))
                     element.clear()
                     k+=1
