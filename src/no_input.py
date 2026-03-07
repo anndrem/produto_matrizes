@@ -1,29 +1,28 @@
 
 def compact():
     a = [
-        [1,2], 
-        [3,4]]
+        [1,2, 3], 
+        [4,1,2]]
     b = [
         [1,2],
-        [3,4],]
+        [3,4],
+        [1,2]]
     c = []
-    for i in range(len(a)):
-        c.append(list([]))
-    
 
     if len(a[0]) != len(b):
         return f"numero de colunas de A eh diferente do numero linhas de B\n{len(a[0])} != {len(b)}."
+    
+    for i in range(len(a)):
+        c.append(list([]))
     
 
     i = 0
     j = 0
     for item in c:
-        c_c = 0
         element = []
         k = 0
         l = 0
         while len(item) < len(b[0]):
-            c_c += 1
             element.append(a[i][j]*b[k][l])
             if j == len(b) - 1:
                 item.append(sum(element))
