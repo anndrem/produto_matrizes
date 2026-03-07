@@ -5,9 +5,9 @@ def compact():
         [3,4]]
     b = [
         [1,2],
-        [3,4]]
+        [3,4],]
     c = []
-    for i in range(len(a[0])):
+    for i in range(len(a)):
         c.append(list([]))
     
 
@@ -18,13 +18,14 @@ def compact():
     i = 0
     j = 0
     for item in c:
+        c_c = 0
         element = []
         k = 0
         l = 0
-        while len(item) < len(b):
-            # novo ponteiro para alterar as colunas da matriz B
+        while len(item) < len(b[0]):
+            c_c += 1
             element.append(a[i][j]*b[k][l])
-            if j == len(b[0]) - 1:
+            if j == len(b) - 1:
                 item.append(sum(element))
                 element.clear()
                 k=0
@@ -33,7 +34,7 @@ def compact():
             else: 
                 k+=1
                 j+=1
-        i+=1
+        i += 1
         
     return c
 
