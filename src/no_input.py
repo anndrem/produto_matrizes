@@ -1,12 +1,13 @@
 
 def compact():
     a = [
-        [1,2, 3], 
-        [4,1,2]]
+        [1,2,2],
+        [3,4,2]
+    ]
     b = [
         [1,2],
         [3,4],
-        [1,2]]
+        [2,3]]
     c = []
 
     if len(a[0]) != len(b):
@@ -17,22 +18,19 @@ def compact():
     
 
     i = 0
-    j = 0
     for item in c:
         element = []
         k = 0
-        l = 0
+        j = 0
         while len(item) < len(b[0]):
-            element.append(a[i][j]*b[k][l])
-            if j == len(b) - 1:
+            element.append(a[i][k]*b[k][j])
+            if k == len(b) - 1:
                 item.append(sum(element))
                 element.clear()
                 k=0
-                l+=1
-                j=0
+                j+=1
             else: 
                 k+=1
-                j+=1
         i += 1
         
     return c
